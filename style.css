@@ -32,7 +32,9 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: auto;
+  height: 215px;
+  padding: 10px;
 }
 
 /* ---  Groups & Items --- */
@@ -51,6 +53,12 @@ main img {
   flex: 2;
 }
 
+.row {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
 /* -------  Navigation ------- */
 
 header {
@@ -65,9 +73,12 @@ header {
   color: #ecdbc9;
 }
 
-header nav ul li {
+header nav ul {
+  display: flex;
   list-style-type: none;
+  padding-bottom: 10px;
 }
+
 
 header nav ul li a {
   color: #ecdbc9;
@@ -83,6 +94,8 @@ header nav ul li a:hover {
 /* -------  Join Form ------- */
 form {
   border: 2px solid #6b1a22;
+  display: flex;
+  flex-flow: column nowrap;
   padding: 10px;
 }
 
@@ -92,6 +105,7 @@ form label {
 
 form select,
 form input {
+  justify-self: flex-end;
   margin-bottom: 20px;
   width: 180px;
 }
@@ -118,3 +132,28 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+@media all and (min-width: 400px) {
+  header .group{
+    justify-content: space-between;
+  }
+  .logo {
+    font-size: 48px;
+    text-align: left;
+  }
+  #join img {
+    height: 450px;
+  }
+  #download img {
+    height: 450px;
+  }
+  .group {
+    align-items: center;
+    flex-flow: row wrap;
+
+  }
+  #blog .group img {
+    height: 300px;
+  }
+
+  
+}
